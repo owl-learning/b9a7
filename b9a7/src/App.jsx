@@ -1,14 +1,14 @@
-
-import './App.css'
+import "./App.css";
+import Nav from "./componet/navbar/Nav";
 
 function App() {
-  
-
   return (
     <>
-      <h1 className='font-bold text-3xl'>hi this is assignment b9a7</h1>
+      <div className="">
+        <Nav></Nav>
+      </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
