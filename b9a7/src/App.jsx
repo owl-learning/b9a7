@@ -1,4 +1,5 @@
 import "./App.css";
+import Hero from "./componet/Hero/Hero";
 import Nav from "./componet/navbar/Nav";
 
 function App() {
@@ -6,6 +7,7 @@ function App() {
     <>
       <div className="">
         <Nav></Nav>
+        <Hero></Hero>
       </div>
     </>
   );
