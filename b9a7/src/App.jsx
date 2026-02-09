@@ -10,7 +10,9 @@ function App() {
         <Nav></Nav>
         <Hero></Hero>
         {/* Recipe */}
-        <Recipes></Recipes>
+        <div className="w-11/12 mx-auto">
+          <Recipes></Recipes>
+        </div>
       </div>
     </>
   );

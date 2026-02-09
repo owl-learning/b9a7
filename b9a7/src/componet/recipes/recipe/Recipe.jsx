@@ -1,18 +1,16 @@
-const recipe = ({ fdData }) => {
-  const { recipe_image } = fdData;
-  console.log(fdData);
+const Recipe = ({ fdData }) => {
+  const { recipe_image,recipe_name, } = fdData;
+  console.log(fdData)
   return (
     <>
       <div className="flex gap-5">
         <div className="">
-          <img src={recipe_image} alt="" />
-        </div>
-        <div className="">
-          <img src={recipe_image} alt="" />
+          <img className="w-full " src={recipe_image} alt="" />
+          <h1>{ recipe_name}</h1>
         </div>
       </div>
     </>
   );
 };
 
-export default recipe;
+export default Recipe;

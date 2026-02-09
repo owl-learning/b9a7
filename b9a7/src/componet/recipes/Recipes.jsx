@@ -19,13 +19,14 @@ const Recipes = () => {
           to order us .<br></br>we will cook your food and deliver you
         </p>
       </div>
-      {fdsData.map((fdData) => (
-        <div className="flex">
-          <Recipe fdData={fdData}></Recipe>
-        </div>
-      ))}
 
-      <div className=""></div>
+      <div className="grid grid-cols-2 w-7/12 gap-4">
+        {fdsData.map((fdData) => (
+          <div className="">
+            <Recipe fdData={fdData}></Recipe>
+          </div>
+        ))}
+      </div>
     </>
   );
 };
