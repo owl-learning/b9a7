@@ -1,4 +1,5 @@
 import { FaRegUserCircle } from "react-icons/fa";
+import{ IoSearchOutline} from "react-icons/io5"
 const Nav = () => {
   return (
     <>
@@ -13,12 +14,12 @@ const Nav = () => {
               <li className="mx-3 font-bold">Location</li>
             </ul>
           </div>
-          <div className="flex">
-            <input
-              className="outline-1 outline-amber-50 rounded-2xl px-3"
-              type="text"
-              placeholder="Search"
-            />
+          <div className="flex items-center">
+            <div className="flex
+            items-center outline-1 rounded-2xl px-2 py-1">
+              <IoSearchOutline className="text-2xl"></IoSearchOutline>
+              <input className="outline-0" type="text" placeholder="Search" />
+            </div>
             <FaRegUserCircle className="text-3xl ml-3"></FaRegUserCircle>
           </div>
         </nav>
