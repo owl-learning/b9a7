@@ -9,10 +9,10 @@ const Recipes = () => {
       .then((res) => res.json())
       .then((json) => setfdData(json));
   }, []);
-  const [cookData,setcookData] = useState([]);
+  const [cooksData,setcookData] = useState([]);
   const handelCook = (fdData) => {
-    setcookData(...cookData, fdData);
-    console.log(cookData);
+    setcookData([...cooksData, fdData]);
+    console.log(cooksData,"clicked");
   }
   
 
@@ -30,12 +30,17 @@ const Recipes = () => {
         <div className="grid grid-cols-2 w-7/12 gap-4">
           {fdsData.map((fdData) => (
             <div className="">
-              <Recipe fdData={fdData} handelCook={handelCook} ></Recipe>
+              <Recipe fdData={fdData} handelCook={handelCook}></Recipe>
             </div>
           ))}
         </div>
         <div className="ml-6 p-2 bg-amber-50 w-5/12">
-          <Cooking></Cooking>
+          <h1 className="text-black text-4xl text-center pt-4 pb-1.5  border-b-2">
+            Want To Cook{" "}
+          </h1>
+          {cooksData.map((cookData) => (
+            <Cooking cookData={cookData}></Cooking>
+          ))}
         </div>
       </div>
     </>
