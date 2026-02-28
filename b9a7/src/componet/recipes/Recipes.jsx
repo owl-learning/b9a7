@@ -9,6 +9,11 @@ const Recipes = () => {
       .then((res) => res.json())
       .then((json) => setfdData(json));
   }, []);
+  const [cookData,setcookData] = useState([]);
+  const handelCook = () => {
+    setcookData(...cookData,)
+    console.log("clicked");
+  }
   
 
   return (
@@ -25,7 +30,7 @@ const Recipes = () => {
         <div className="grid grid-cols-2 w-7/12 gap-4">
           {fdsData.map((fdData) => (
             <div className="">
-              <Recipe fdData={fdData}></Recipe>
+              <Recipe fdData={fdData} handelCook={handelCook} ></Recipe>
             </div>
           ))}
         </div>

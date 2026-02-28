@@ -1,6 +1,6 @@
 import { CiClock2 } from "react-icons/ci";
 import { FaGripfire } from "react-icons/fa";
-const Recipe = ({ fdData }) => {
+const Recipe = ({ fdData,handelCook }) => {
   const {
     recipe_image,
     recipe_name,
@@ -35,7 +35,7 @@ const Recipe = ({ fdData }) => {
               {preparing_time}
             </p>
           </div>
-          <button className="btn-active bg-green-400 font-bold px-3 rounded-full mt-4 py-2">Want to Cook</button>
+          <button onClick={()=>handelCook()} className="btn-active bg-green-400 font-bold px-3 rounded-full mt-4 py-2">Want to Cook</button>
         </div>
       </div>
     </>
