@@ -10,9 +10,9 @@ const Recipes = () => {
       .then((json) => setfdData(json));
   }, []);
   const [cookData,setcookData] = useState([]);
-  const handelCook = () => {
-    setcookData(...cookData,)
-    console.log("clicked");
+  const handelCook = (fdData) => {
+    setcookData(...cookData, fdData);
+    console.log(cookData);
   }
   
 

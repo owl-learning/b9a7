@@ -35,7 +35,7 @@ const Recipe = ({ fdData,handelCook }) => {
               {preparing_time}
             </p>
           </div>
-          <button onClick={()=>handelCook()} className="btn-active bg-green-400 font-bold px-3 rounded-full mt-4 py-2">Want to Cook</button>
+          <button onClick={()=>handelCook(fdData)} className="btn-active bg-green-400 font-bold px-3 rounded-full mt-4 py-2">Want to Cook</button>
         </div>
       </div>
     </>

@@ -1,6 +1,6 @@
 
 
-const Cooking = ({fodData}) => {
+const Cooking = ({}) => {
     return (
         <>
             <div className="">
