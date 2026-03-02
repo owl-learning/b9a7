@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Recipe from "./recipe/Recipe";
-import Cooking from "../cooking/Cooking";
+import Cook from "../cooking/Cook";
 
 const Recipes = () => {
   const [fdsData, setfdData] = useState([]);
@@ -13,7 +13,16 @@ const Recipes = () => {
   const handelCook = (fdData) => {
     setcookData([ fdData, ...cooksData ]);
     console.log(cooksData);
+    
   }
+  
+  const removeCook = (idToRemove) => {
+    // We keep every item EXCEPT the one that matches the id
+    const updatedCooks = cooksData.filter((cook) => cook.recipe_id !== idToRemove);
+    setcookData(updatedCooks);
+    
+  };
+  
   
 
   return (
@@ -46,7 +55,7 @@ const Recipes = () => {
             </div>
           </div>
           {cooksData.map((cookData) => (
-            <Cooking cookData={cookData}></Cooking>
+            <Cook  cookData={cookData} removeCook={removeCook}></Cook>
           ))}
         </div>
       </div>
