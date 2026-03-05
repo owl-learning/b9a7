@@ -10,7 +10,12 @@ const Recipes = () => {
       .then((res) => res.json())
       .then((json) => setfdData(json));
   }, []);
-  const [ cooksData, setcookData ] = useState([]);
+  const [cooksData, setcookData] = useState([]);
+  const [mnCooks, setmnCook] = useState([])
+  const mnCook = (cookData) => {
+    setmnCook([...mnCooks, cookData])
+    console.log(mnCooks)
+  }
   const handelCook = (fdData) => {
     setcookData([ fdData, ...cooksData ]);
     console.log(cooksData);
@@ -63,7 +68,7 @@ const Recipes = () => {
               </div>
             </div>
             {cooksData.map((cookData) => (
-              <Cook cookData={cookData} removeCook={removeCook}></Cook>
+              <Cook cookData={cookData} removeCook={removeCook} mnCook={mnCook} ></Cook>
             ))}
           </div>
           <div className="">
