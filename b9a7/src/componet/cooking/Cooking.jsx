@@ -2,10 +2,13 @@
 
 const Cooking = ({ cookData }) => {
     
-    const { recipe_name } = cookData;
+    const { recipe_name,calories,preparing_time } = cookData;
     return (
-        <div className="text-black">
-            <h1 className="">{ recipe_name}</h1>
+        <div className="text-black grid grid-cols-3 text-l text-center items-center bg-amber-200 m-2 p-2 font-bold">
+            <h1 className="">{recipe_name}</h1>
+            <h1 className="">{calories}</h1>
+            <h1 className="">{preparing_time}</h1>
+            
         </div>
     );
 };

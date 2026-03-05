@@ -15,6 +15,7 @@ const Recipes = () => {
   const mnCook = (cookData) => {
     setmnCook([...mnCooks, cookData])
     console.log(mnCooks)
+    
   }
   const handelCook = (fdData) => {
     setcookData([ fdData, ...cooksData ]);
@@ -68,7 +69,11 @@ const Recipes = () => {
               </div>
             </div>
             {cooksData.map((cookData) => (
-              <Cook cookData={cookData} removeCook={removeCook} mnCook={mnCook} ></Cook>
+              <Cook
+                cookData={cookData}
+                removeCook={removeCook}
+                mnCook={mnCook}
+              ></Cook>
             ))}
           </div>
           <div className="">
@@ -76,15 +81,18 @@ const Recipes = () => {
               Currenly Cooking
             </h1>
             <div className="">
-              <div className="grid grid-cols-4 gap-x-8 text-center font-bold border-b-2 mb-2 p-2 text-black text-xl">
+              <div className="grid grid-cols-3 gap-x-8 text-center font-bold border-b-2 mb-2 p-2 text-black text-xl">
                 <h1>Name</h1>
                 <h1 className="">Cacolri</h1>
                 <h1>Preparing-Time</h1>
               </div>
             </div>
-            {mnCooks.map((cookData) => (
-              <Cooking cookData={cookData} ></Cooking>
-            ))}
+            <div className="border-black border-b-2 pb-2">
+              {mnCooks.map((cookData) => (
+                <Cooking cookData={cookData}></Cooking>
+              ))}
+            </div>
+            <div className="text-black font-bold text-3xl">Total</div>
           </div>
         </div>
       </div>
