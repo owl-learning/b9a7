@@ -9,7 +9,7 @@ const Cook = ({ cookData,removeCook }) => {
                 <h1>{recipe_name}</h1>
                 <h1>{calories}</h1>
                 <h1>{preparing_time}</h1>
-                <button onClick={()=>removeCook(recipe_id)} className="py-1.5 text-xl bg-green-500 rounded-full text-black font-bold " >Preparing</button>
+                <button onClick={()=>removeCook(recipe_id,cookData)} className="py-1.5 text-xl bg-green-500 rounded-full text-black font-bold " >Preparing</button>
         </div>
       </>
     );

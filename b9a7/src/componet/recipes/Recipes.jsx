@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Recipe from "./recipe/Recipe";
 import Cook from "../cooking/Cook";
+import Cooking from "../cooking/Cooking";
 
 const Recipes = () => {
   const [fdsData, setfdData] = useState([]);
@@ -15,13 +16,19 @@ const Recipes = () => {
     console.log(cooksData);
     
   }
-  
   const removeCook = (idToRemove) => {
     // We keep every item EXCEPT the one that matches the id
     const updatedCooks = cooksData.filter((cook) => cook.recipe_id !== idToRemove);
     setcookData(updatedCooks);
     
   };
+  // const [cooksData, setcookData] = useState([]);
+   
+  //   setcookData([...cooksData,cookData]);
+  //   console.log(cooksData);
+  
+
+  
   
   
 
@@ -44,19 +51,36 @@ const Recipes = () => {
           ))}
         </div>
         <div className="ml-6 p-2 bg-amber-50 w-5/12">
-          <h1 className="text-black text-4xl text-center pt-4 pb-1.5  border-b-2">
-            Want To Cook
-          </h1>
           <div className="">
-            <div className="grid grid-cols-4 gap-x-8 text-center font-bold border-b-2 mb-2 p-2 text-black text-xl">
-              <h1>Name</h1>
-              <h1 className="">Cacolri</h1>
-              <h1>Preparing-Time</h1>
+            <h1 className="text-black text-4xl text-center pt-4 pb-1.5  border-b-2">
+              Want To Cook
+            </h1>
+            <div className="">
+              <div className="grid grid-cols-4 gap-x-8 text-center font-bold border-b-2 mb-2 p-2 text-black text-xl">
+                <h1>Name</h1>
+                <h1 className="">Cacolri</h1>
+                <h1>Preparing-Time</h1>
+              </div>
             </div>
+            {cooksData.map((cookData) => (
+              <Cook cookData={cookData} removeCook={removeCook}></Cook>
+            ))}
           </div>
-          {cooksData.map((cookData) => (
-            <Cook  cookData={cookData} removeCook={removeCook}></Cook>
-          ))}
+          <div className="">
+            <h1 className="text-black text-4xl text-center pt-4 pb-1.5  border-b-2">
+              Currenly Cooking
+            </h1>
+            <div className="">
+              <div className="grid grid-cols-4 gap-x-8 text-center font-bold border-b-2 mb-2 p-2 text-black text-xl">
+                <h1>Name</h1>
+                <h1 className="">Cacolri</h1>
+                <h1>Preparing-Time</h1>
+              </div>
+            </div>
+            {cooksData.map((cookData) => (
+              <Cooking cookData={cookData} ></Cooking>
+            ))}
+          </div>
         </div>
       </div>
     </>
