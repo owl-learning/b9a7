@@ -82,7 +82,7 @@ const Recipes = () => {
                 <h1>Preparing-Time</h1>
               </div>
             </div>
-            {cooksData.map((cookData) => (
+            {mnCooks.map((cookData) => (
               <Cooking cookData={cookData} ></Cooking>
             ))}
           </div>
