@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Recipe from "./recipe/Recipe";
 import Cook from "../cooking/Cook";
 import Cooking from "../cooking/Cooking";
+import Total from "../Total/Total";
 
 const Recipes = () => {
   const [fdsData, setfdData] = useState([]);
@@ -11,7 +12,7 @@ const Recipes = () => {
       .then((json) => setfdData(json));
   }, []);
   const [cooksData, setcookData] = useState([]);
-  const [mnCooks, setmnCook] = useState([])
+  const [mnCooks, setmnCook] = useState([]);
   const mnCook = (cookData) => {
     setmnCook([...mnCooks, cookData])
     console.log(mnCooks)
@@ -28,10 +29,7 @@ const Recipes = () => {
     setcookData(updatedCooks);
     
   };
-  // const [cooksData, setcookData] = useState([]);
-   
-  //   setcookData([...cooksData,cookData]);
-  //   console.log(cooksData);
+  
   
 
   
@@ -92,7 +90,12 @@ const Recipes = () => {
                 <Cooking cookData={cookData}></Cooking>
               ))}
             </div>
-            <div className="text-black font-bold text-3xl">Total</div>
+            <div className="text-black font-bold text-3xl">Total
+              {mnCooks.map((cookData) => (
+                <Total cookData={cookData}></Total>
+
+              ))}
+            </div>
           </div>
         </div>
       </div>
