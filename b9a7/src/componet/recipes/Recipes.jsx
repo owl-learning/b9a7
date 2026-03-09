@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Recipe from "./recipe/Recipe";
 import Cook from "../cooking/Cook";
 import Cooking from "../cooking/Cooking";
-import Total from "../Total/Total";
+
 
 const Recipes = () => {
   const [fdsData, setfdData] = useState([]);
@@ -13,14 +13,20 @@ const Recipes = () => {
   }, []);
   const [cooksData, setcookData] = useState([]);
   const [mnCooks, setmnCook] = useState([]);
+  const [updatecal, setcal] = useState(0);
+  const [upTime,setTime]=useState(0)
   const mnCook = (cookData) => {
     setmnCook([...mnCooks, cookData])
-    console.log(mnCooks)
+    const fstcal = parseInt(cookData.calories)
+    const fstTime = parseInt(cookData.preparing_time)
+    setTime(upTime+fstTime)
+    setcal(updatecal+fstcal)
+    
     
   }
   const handelCook = (fdData) => {
-    setcookData([ fdData, ...cooksData ]);
-    console.log(cooksData);
+    setcookData([...cooksData,fdData ]);
+    
     
   }
   const removeCook = (idToRemove) => {
@@ -90,11 +96,10 @@ const Recipes = () => {
                 <Cooking cookData={cookData}></Cooking>
               ))}
             </div>
-            <div className="text-black font-bold text-3xl">Total
-              {mnCooks.map((cookData) => (
-                <Total cookData={cookData}></Total>
-
-              ))}
+            <div className="text-black font-bold grid grid-cols-3 text-center text-3xl">
+              <h1>Tota =</h1>
+              <h1>{updatecal} Caloris</h1>
+              <h1>{ upTime} Minits</h1>
             </div>
           </div>
         </div>
